@@ -82,12 +82,13 @@ public class _01_StringMethods {
 
     // Return the sum of all numerical digits in the String
     public static int numeralSum(String s) {
+    	int sum = 0;
     for (int i = 0; i < s.length(); i++) {
-		if (s.) {
-			
+		if (Character.isDigit(s.charAt(i))) {
+		sum+=Character.getNumericValue(s.charAt(i));
 		}
 	}
-    return (Integer) null;
+    return sum;	
     }
 
     // Return the number of times String substring appears in String s
