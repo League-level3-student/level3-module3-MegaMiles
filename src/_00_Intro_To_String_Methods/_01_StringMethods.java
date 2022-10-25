@@ -93,27 +93,35 @@ public class _01_StringMethods {
 
     // Return the number of times String substring appears in String s
     public static int substringCount(String s, String substring) {
-    for (int i = 0; i < s.length(); i++) {
-		
-	}	
+    	int numberoftimes = 0;
+    	int index = s.indexOf(substring);
+    	while(index != -1) {			
+		if (s.substring(index).contains(substring)) {
+			numberoftimes++;
+			index = s.indexOf(substring, index+substring.length());
+		}
+    	}	
     	
-        return 0;
+        return numberoftimes;
     }
 
     // Call Utilities.encrypt at the bottom of this file to encrypt String s
     public static String encrypt(String s, char key) {
+    	Utilities.encrypt(s, key);
         return null;
     }
 
     // Call Utilities.decrypt at the bottom of this file to decrypt the
     // cyphertext (encrypted text)
     public static String decrypt(String s, char key) {
+    	Utilities.decrypt(s, key);	
         return null;
     }
 
     // Return the number of words in String s that end with String substring
     // You can assume there are no punctuation marks between words
     public static int wordsEndsWithSubstring(String s, String substring) {
+    	
         return 0;
     }
 
@@ -149,4 +157,5 @@ class Utilities {
         }
         return new String(b);
     }
+   
 }
