@@ -107,22 +107,28 @@ public class _01_StringMethods {
 
     // Call Utilities.encrypt at the bottom of this file to encrypt String s
     public static String encrypt(String s, char key) {
-    	Utilities.encrypt(s, key);
-        return null;
+    	s = Utilities.encrypt(s.getBytes(), (byte)key);
+        return s;
     }
 
     // Call Utilities.decrypt at the bottom of this file to decrypt the
     // cyphertext (encrypted text)
     public static String decrypt(String s, char key) {
-    	Utilities.decrypt(s, key);	
-        return null;
+    	s = Utilities.decrypt(s, (byte)key);	
+        return s;
     }
 
     // Return the number of words in String s that end with String substring
     // You can assume there are no punctuation marks between words
     public static int wordsEndsWithSubstring(String s, String substring) {
-    	
-        return 0;
+    int numberofwords = 0;
+    String[] sM = s.split(" ");
+   for (int i = 0; i < sM.length; i++) {
+    if (sM[i].endsWith(substring)) {
+    	numberofwords++;	
+	}
+    }
+return numberofwords;
     }
 
     // Given String s, return the number of characters between the first
