@@ -135,14 +135,27 @@ return numberofwords;
     // occurrence of String substring and the final occurrence
     // You can assume that substring will appear at least twice
     public static int distance(String s, String substring) {
-        return 0;
+    int first = s.indexOf(substring);
+    int last = s.lastIndexOf(substring);
+    int firstbetweenlast = first-last;
+        return firstbetweenlast;
     }
 
     // Return true if String s is a palindrome
     // palindromes are words or phrases are read the same forward as backward.
     // HINT: ignore/remove all punctuation and spaces in the String
     public static boolean palindrome(String s) {
-        return true;
+    	boolean pallOrNot = true;
+    	int counter = 0;
+    for (int i = 0; i < s.length(); i++) {
+		if (s.charAt(i).equalsIgnoreCase(s.charAt(s.length()-i)) ) {
+		counter++;	
+		} 
+	}	
+    if (counter>0) {
+	pallOrNot = false;	
+	}
+        return pallOrNot;
     }
 }
 
