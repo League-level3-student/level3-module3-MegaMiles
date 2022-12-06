@@ -137,7 +137,8 @@ return numberofwords;
     public static int distance(String s, String substring) {
     int first = s.indexOf(substring);
     int last = s.lastIndexOf(substring);
-    int firstbetweenlast = first-last;
+    first = first + substring.length();
+    int firstbetweenlast = last - first;
         return firstbetweenlast;
     }
 
@@ -146,15 +147,18 @@ return numberofwords;
     // HINT: ignore/remove all punctuation and spaces in the String
     public static boolean palindrome(String s) {
     	boolean pallOrNot = true;
-    	int counter = 0;
-    for (int i = 0; i < s.length(); i++) {
-		if (s.charAt(i).equalsIgnoreCase(s.charAt(s.length()-i)) ) {
-		counter++;	
+    	String Lowers = s.toLowerCase();
+    	Lowers = Lowers.replaceAll(" ", "");
+    	Lowers = Lowers.replaceAll("\\.", "");
+    	Lowers = Lowers.replaceAll("\\?", "");
+    	Lowers = Lowers.replaceAll("-", "");
+    	Lowers = Lowers.replaceAll(",", "");
+    	Lowers = Lowers.replaceAll(":", "");
+    for (int i = 0; i < Lowers.length(); i++) {
+		if (Lowers.charAt(i) != (Lowers.charAt(Lowers.length()-1-i)) ) {
+		return false;
 		} 
 	}	
-    if (counter>0) {
-	pallOrNot = false;	
-	}
         return pallOrNot;
     }
 }
