@@ -19,7 +19,7 @@ public class _03_StringBuilder {
     StringBuilder newStr = new StringBuilder(str);
     String Return = newStr.insert(index, newChar).toString();
         return Return;
-    }
+    } 
     
     public static String delete(String str, int startIndex, int endIndex) {
     StringBuilder newStr = new StringBuilder(str);
