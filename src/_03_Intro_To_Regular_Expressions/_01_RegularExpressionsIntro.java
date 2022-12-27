@@ -17,6 +17,8 @@ public class _01_RegularExpressionsIntro {
      * Code method below! 
      */
     String emailRemover(String message) {
-        return null;
+String remove = "";
+String Return = message.replaceAll(remove, "");
+        return Return;
     }
 }
